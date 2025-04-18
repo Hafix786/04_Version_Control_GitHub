@@ -1,0 +1,178 @@
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git add .
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git commit -m "change title Git Branches to GitHub"
+[main 18f6adb] change title Git Branches to GitHub
+ 1 file changed, 1 insertion(+), 1 deletion(-)    
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git checkout contact
+Switched to branch 'contact'
+Your branch is up to date with 'origin/contact'.
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact)
+$ git log --oneline --all 
+18f6adb (main) change title Git Branches to GitHub
+603c609 (origin/main) Reapply "Code before apply any revert"
+7bc1eef Revert "Update script.js"
+3d284b7 Reapply "Update index.html change text in h1"
+85297d5 Revert "Update index.html change text in h1"
+8dc37a0 Update index.html change text in h1
+681532d Update script.js
+965d8ed Update contact.html in main branch
+4250ea1 (HEAD -> contact, origin/contact) add console.log hii
+d36f27c Merge branch 'about'
+bd89582 Merge branch 'contact'
+3a2a814 Removed hello para
+88bb92f Create a contact branch and contact.html file
+7126faf (origin/about, about) Added a Intro para in about.html
+e8b0edd Added a Hello para
+b9d2e3d Created a about branch
+f5d9ed5 Linked css file and added some style to it
+def4d24 Added a boilerplate
+1b2c158 Created html css and js files
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact)
+$ git commit -m "change git branches to git and github"
+On branch contact
+Your branch is up to date with 'origin/contact'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact)
+$ git add .
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact)
+$ git commit -m "change git branches to git and github"
+[contact 4df4d09] change git branches to git and github
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact)
+$ git merge
+Already up to date.
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact)
+$ git log --oneline --all
+4df4d09 (HEAD -> contact) change git branches to git and github
+18f6adb (main) change title Git Branches to GitHub
+603c609 (origin/main) Reapply "Code before apply any revert"   
+7bc1eef Revert "Update script.js"
+3d284b7 Reapply "Update index.html change text in h1"
+85297d5 Revert "Update index.html change text in h1"
+8dc37a0 Update index.html change text in h1
+681532d Update script.js
+965d8ed Update contact.html in main branch
+4250ea1 (origin/contact) add console.log hii
+d36f27c Merge branch 'about'
+bd89582 Merge branch 'contact'
+3a2a814 Removed hello para
+88bb92f Create a contact branch and contact.html file
+7126faf (origin/about, about) Added a Intro para in about.html
+e8b0edd Added a Hello para
+b9d2e3d Created a about branch
+f5d9ed5 Linked css file and added some style to it
+def4d24 Added a boilerplate
+1b2c158 Created html css and js files
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git merge
+Already up to date.
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git checkout contact
+Switched to branch 'contact'
+Your branch is ahead of 'origin/contact' by 1 commit.
+  (use "git push" to publish your local commits)
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact)
+$ git merge main
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact|MERGING)
+$ git commit -m "conflict resolve"
+U       index.html
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact|MERGING)
+$ git add index.html
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact|MERGING)
+$ git commit -m "conflict resolved"
+[contact 50948f2] conflict resolved
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (contact)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)  
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git add .
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git commit -m "hello procoder"
+[main a261597] hello procoder
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git pull
+Auto-merging script.js
+CONFLICT (content): Merge conflict in script.js
+Automatic merge failed; fix conflicts and then commit the result.
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main|MERGING)
+$ git commit -m "conflict resolved again"
+U       script.js
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main|MERGING)
+$ git add .
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main|MERGING)
+$ git commit -m "conflict resolved again"
+[main cad159a] conflict resolved again
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git add .
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git commit -m "set margin to 20px"
+[main dd2a069] set margin to 20px
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
+$ git pull
+Auto-merging style.css
+CONFLICT (content): Merge conflict in style.css
+Automatic merge failed; fix conflicts and then commit the result.
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main|MERGING)
+$ git add .
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main|MERGING)
+$ git commit -m "resolve conflict of margin in style.css"
+[main 962a6f0] resolve conflict of margin in style.css
+
+buzz 2@DESKTOP-LMVVE9D MINGW64 /d/Web_Development/Git_Version_Control/06_Conflict_in_Merging (main)
