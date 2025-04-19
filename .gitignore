@@ -1,4 +1,4 @@
 .env
 node-modules
-bin
+# bin
 style.css
