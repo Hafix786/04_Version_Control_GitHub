@@ -1,5 +1,5 @@
 .env
 node-modules
-# bin
+bin
 style.css
 about.html
